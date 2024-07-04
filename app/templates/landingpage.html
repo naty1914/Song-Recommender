@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommender - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7O2lE2D0rcHDFRvw1KTN9FJd2OHR0+zL4R9" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Song Recommender</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#intro">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid px-0">
+        <section id="intro" class="cover">
+            <div class="cover-content">
+                <h1 class="display-4"><strong>Welcome to Song Recommender!</strong></h1>
+                <p class="lead">Discover new music tailored to your taste.</p>
+                <div class="my-4">
+                    <a href="/login" class="btn btn-primary mx-2">Get Started</a>
+                </div>
+            </div>
+        </section>
+        <section id="how-it-works" class="text-center my-5">
+            <h2 class="mt-5">How It Works</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body card-no-bg">
+                            <h5 class="card-title">Step 1: Login & Redirect to Spotify</h5>
+                            <p class="card-text">Click on the "Get Started" button to login and you will be redirected to Spotify to allow permissions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body card-no-bg">
+                            <h5 class="card-title">Step 2: Allow Permission</h5>
+                            <p class="card-text">Grant permission to access your Spotify data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body card-no-bg">
+                            <h5 class="card-title">Step 3: Callback to Homepage</h5>
+                            <p class="card-text">You will be redirected back to the homepage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body card-no-bg">
+                            <h5 class="card-title">Step 4: Use Features</h5>
+                            <p class="card-text">Explore features like viewing playlists, user profile, and getting personalized recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features" class="text-center my-5">
+            <h2 class="mt-5">Key Features</h2>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 card-no-bg">
+                        <img src="../images/t.jpg" class="card-img-top" alt="Feature 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Tailored to Your Taste</h5>
+                            <p class="card-text">SongRecommender uses the Spotify API to analyze your listening habits and create personalized music recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 card-no-bg"> 
+                        <img src="../images/art3.jpg" class="card-img-top" alt="Feature 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Discover New Artists</h5>
+                            <p class="card-text">Explore a diverse range of artists and genres that you may have never encountered before, expanding your musical horizons.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 card-no-bg">
+                        <img src="../images/5.jpg" class="card-img-top" alt="Feature 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Evolving Recommendations</h5>
+                            <p class="card-text">As you continue to listen and engage with the platform, the recommendations will adapt and improve, ensuring a constantly refreshed experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 card-no-bg"> 
+                        <img src="../images/4.jpg" class="card-img-top" alt="Feature 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Preview, Personalized Results</h5>
+                            <p class="card-text">Listen to recommended music snippets for 30 seconds to quickly decide if it matches your taste, ensuring a personalized experience tailored to your preferences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="coming-soon" class="text-center my-5">
+            <h2 class="mt-5">Coming Soon</h2>
+            <div class="row centered-cards">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 card-no-bg">
+                        <div class="card-body">
+                            <img src="../images/play.jpg" class="card-img-top" >
+                            <h5 class="card-title">Discover Playlists</h5>
+                            <p class="card-text">Browse through a wide selection of playlists, ranging from genre-specific to mood-based, to find the perfect soundtrack for any occasion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 card-no-bg">
+                        <div class="card-body">
+                            <img src="../images/key.jpg" class="card-img-top" >
+                            <h5 class="card-title">Create Playlists</h5>
+                            <p class="card-text">Unleash your inner DJ and create your own personalized playlists to share with friends or keep for yourself.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 card-no-bg">
+                        <div class="card-body">
+                            <img src="../images/m.jpg" class="card-img-top" >
+                            <h5 class="card-title">Listen on Web</h5>
+                            <p class="card-text">Enjoy your playlists and recommendations directly on the web, anytime, anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="text-center my-5">
+            <h2 class="mt-5">About SongRecommender</h2>
+            <p>I got the idea for SongRecommender because I often listen to music on Spotify while coding. Finding new music that I like can be difficult sometimes, so I created this project to make it easier. SongRecommender uses the Spotify API to analyze your listening habits and provide personalized music recommendations. This project is also part of my portfolio for <a href="https://www.holbertonschool.com" target="_blank">Holberton School</a>.</p>
+            <div class="my-4">
+                <a href="https://github.com/NatnaelSeifu/SongRecommender" class="btn btn-outline-secondary">View Project on GitHub</a>
+            </div>
+        </section>
+        
+        
+        
+        <section id="developer" class="text-center my-5">
+            <h2 class="mt-5">Developer</h2>
+            <p>I am Natnael Seifu, a Python developer with expertise in Bootstrap and Flask.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/natnael-seifu/" class="btn btn-icon btn-outline-primary mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/naty1914" class="btn btn-icon btn-outline-dark mx-2"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/NatnaelSeifu19" class="btn btn-icon btn-outline-info mx-2"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer class="py-3 bg-dark text-white text-center">
+        <div class="container">
+            <p><a href="#intro" class="text-white">Home</a> | © 2024 Song Recommender</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

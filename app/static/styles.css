@@ -1,0 +1,219 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+    background-color: #09021f;
+    color: white;
+}
+
+
+.container {
+    text-align: center;
+}
+
+h1 {    
+    margin-top: 5rem;
+}
+
+footer {
+    margin-top: auto;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.nav-link {
+    color: white; 
+}
+
+
+
+a.btn:hover {
+    background-color: #1ed760;
+    border-color: #1ed760;
+}
+
+.card {
+    
+    margin: 20px; 
+    background: none;
+    border-radius: 8px;
+    
+}
+
+.recommendation-body {
+   
+    padding: 0 20px 20px;
+   
+}
+h1.mb-4{
+    margin-top:50px;
+  
+}
+ .list-group-item {
+    background-color:  #09021f !important;
+    color: #ffffff;
+}
+
+
+.not-working {
+    font-size: 12px;
+    color: #f00;
+    margin-left: 10px;
+}
+
+.audio-control {
+    margin-right: 10px;
+}
+
+
+.playlist-container {
+   
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.playlist-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.playlist-item {
+    margin-bottom: 10px;
+}
+.btn-back {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+    
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profile-title {
+    text-align: center;
+    margin: 30px 100px 20px 20px;
+}
+.profile-info {
+    margin-bottom: 20px;
+}
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-profile {
+    margin-right: 10px;
+}
+
+.img-fluid {
+    width: 70%;
+    height: 5%;
+}
+
+.cover {
+    background-image: url('../images/pic.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.cover-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cover h1 {
+    font-size: 3.5rem;
+}
+
+.cover p {
+    font-size: 1.5rem;
+}
+
+.row {
+    margin-right: 0;
+}
+.card-body {
+    background-image: 0;
+}
+
+.card-no-bg {
+    background: none;
+}
+
+.card-no-bg .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card-no-bg .card-text {
+    font-size: 1rem;
+    color: #efe5e5;
+}
+
+
+.card-no-bg {
+    background: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-no-bg .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+.card-no-bg .card-text {
+    font-size: 2srem;
+   /
+}
+
+.card-no-bg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.about-text {
+    font-size: 1.25rem;
+    color: #d9d5d5;
+    max-width: 1000px;
+
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#about .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    transition: all 0.3s ease-in-out;
+}
+
+#about .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+    border-color: #012f58;
+}
+
+.profile {
+    color: white;
+}
