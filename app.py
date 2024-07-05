@@ -13,7 +13,7 @@ app.secret_key = os.urandom(24)
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-REDIRECT_URI = 'http://127.0.0.1:5000/callback'
+REDIRECT_URI = 'https://song-recommender-1.onrender.com/callback'
 AUTH_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"
 SIGNUP_URL = "https://www.spotify.com/signup/"
