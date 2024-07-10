@@ -1,4 +1,7 @@
-body {
+
+/* Style the body to use flexbox layout, cover the full viewport height, 
+   and set a dark background with white text */
+   body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -7,87 +10,100 @@ body {
     color: white;
 }
 
-
+/* Center-align the text inside elements with the class "container" */
 .container {
     text-align: center;
 }
 
+/* Add margin to the top of <h1> elements */
 h1 {    
     margin-top: 5rem;
 }
 
+/* Style the footer to stick to the bottom, 
+   with a translucent black background and white text */
 footer {
     margin-top: auto;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+/* Style for navigation links */
 .nav-link {
     color: white; 
 }
 
-
-
+/* Hover effect for buttons */
 a.btn:hover {
     background-color: #1ed760;
     border-color: #1ed760;
 }
 
+/* Style for card elements */
 .card {
-    
     margin: 20px; 
     background: none;
     border-radius: 8px;
-    
 }
 
+
+/* Padding for the recommendation body section */
 .recommendation-body {
-   
     padding: 0 20px 20px;
-   
 }
-h1.mb-4{
-    margin-top:50px;
-  
+
+/* Margin for h1 elements with class mb-4 */
+h1.mb-4 {
+    margin-top: 50px;
 }
- .list-group-item {
-    background-color:  #09021f !important;
+
+/* Style for list group items */
+.list-group-item {
+    background-color: #09021f !important;
     color: #ffffff;
 }
 
 
+
+/* Style for elements with class 'not-working' */
 .not-working {
     font-size: 12px;
     color: #f00;
     margin-left: 10px;
 }
 
+/* Margin for elements with class 'audio-control' */
 .audio-control {
     margin-right: 10px;
 }
 
-
+/* Style for the playlist container */
 .playlist-container {
-   
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+/* Center-align and add margin to playlist titles */
 .playlist-title {
     text-align: center;
     margin-bottom: 30px;
 }
+
+/* Add margin to playlist items */
 .playlist-item {
     margin-bottom: 10px;
 }
+
+/* Style for the back button */
 .btn-back {
     display: block;
     margin-top: 20px;
     text-align: center;
 }
-    
+
+/* Style for the profile container */
 .profile-container {
     max-width: 600px;
     margin: 0 auto;
@@ -95,26 +111,38 @@ h1.mb-4{
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Center-align and add margin to profile titles */
 .profile-title {
     text-align: center;
     margin: 30px 100px 20px 20px;
 }
+
+/* Add margin to profile information */
 .profile-info {
     margin-bottom: 20px;
 }
+
+/* Center-align links and add margin */
 .links {
     text-align: center;
     margin-top: 20px;
 }
+
+/* Add margin to profile buttons */
 .btn-profile {
     margin-right: 10px;
 }
 
+/* Set size for fluid images */
 .img-fluid {
     width: 70%;
     height: 5%;
 }
 
+
+/* Style the cover section with a background image and center-align content */
 .cover {
     background-image: url('../images/pic.png');
     background-size: cover;
@@ -128,92 +156,104 @@ h1.mb-4{
     text-align: center;
 }
 
+/* Style the content within the cover section */
 .cover-content {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Style the heading within the cover section */
 .cover h1 {
     font-size: 3.5rem;
 }
 
+/* Style the paragraph within the cover section */
 .cover p {
     font-size: 1.5rem;
 }
 
+/* Remove right margin from rows */
 .row {
     margin-right: 0;
 }
+
+/* Set background image for card body to none */
 .card-body {
     background-image: 0;
 }
 
+/* Remove background for cards with no background */
 .card-no-bg {
     background: none;
 }
 
+/* Style the card title within no-background cards */
 .card-no-bg .card-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
 }
 
+/* Style the card text within no-background cards */
 .card-no-bg .card-text {
     font-size: 1rem;
     color: #efe5e5;
 }
 
-
+/* Style the general behavior of cards with no background */
 .card-no-bg {
     background: none;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Style the card title within no-background cards */
 .card-no-bg .card-title {
     font-size: 1.5rem;
     font-weight: bold;
 
 }
-
+/* Additional styling for the card text within no-background cards */
 .card-no-bg .card-text {
     font-size: 2srem;
-   /
 }
-
+/* Style for scaling and adding shadow on hover for cards with no background */
 .card-no-bg:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
 }
 
-
-
+/* Style for the heading within the 'about' section */
 #about h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 20px; /* Margin at the bottom */
 }
+
+/* Style for the paragraph text within the 'about' section */
 .about-text {
     font-size: 1.25rem;
     color: #d9d5d5;
     max-width: 1000px;
-
     margin: 0 auto;
     line-height: 1.6;
 }
 
+/* Style for the secondary outline button within the 'about' section */
 #about .btn-outline-secondary {
     color: #6c757d;
     border-color: #6c757d;
     transition: all 0.3s ease-in-out;
 }
-
+/* Style for the secondary outline button in the 'about' section when hovered */
 #about .btn-outline-secondary:hover {
     background-color: #6c757d;
     color: #fff;
     border-color: #012f58;
 }
 
+
+/* Style for the profile button */
 .profile {
     color: white;
 }

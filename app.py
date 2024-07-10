@@ -1,3 +1,6 @@
+"""
+This module contains the necessary imports for the Flask application.
+"""
 import base64
 import logging
 from flask import Flask, redirect, request, send_from_directory, session, url_for, render_template
@@ -6,21 +9,39 @@ import urllib.parse
 import os
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
+# Initialize Flask application
 app = Flask(__name__)
+
+# Generate a random secret key for the application.
+# This key is used to secure session data and other
+# sensitive information.
 app.secret_key = os.urandom(24)
 
+# Set CLIENT_ID and CLIENT_SECRET variables from environment variables
+# or exit if these variables are not set.
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-REDIRECT_URI = 'https://song-recommender-1.onrender.com/callback'
+
+if not CLIENT_ID or not CLIENT_SECRET:
+    raise ValueError("CLIENT_ID and CLIENT_SECRET must be set in environment variables")
+
+# Spotify API endpoints
+REDIRECT_URI = 'http://127.0.0.1:5000/callback'
 AUTH_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"
+
+# URL to sign up for Spotify
 SIGNUP_URL = "https://www.spotify.com/signup/"
 
-logging.basicConfig(level=logging.DEBUG)
+
 
 def get_spotify_headers(token):
+    """
+    Generates Spotify API request headers.
+    """
     client_id = os.environ.get('CLIENT_ID')
     client_secret = os.environ.get('CLIENT_SECRET')
 
@@ -34,6 +55,9 @@ def get_spotify_headers(token):
     return headers
 
 def get_user_id(token):
+    """
+    Retrieves user ID from Spotify API.
+    """
     headers = get_spotify_headers(token)
     url = 'https://api.spotify.com/v1/me'
     response = requests.get(url, headers=headers)
@@ -47,16 +71,37 @@ def get_user_id(token):
 
 @app.route('/images/<path:filename>')
 def custom_static(filename):
+    """
+    A route decorator that serves static files from the 'images' directory.
+
+    Parameters: filename (str): The name of the file to be served.
+
+    Returns: Response: The response object containing the requested file.
+    """
+    
     return send_from_directory('images', filename)
+
 @app.route('/')
 def landing():
+    """
+    Renders the landingpage.html template and returns it as the response for the root URL ('/').
+
+    Returns: The rendered landingpage.html template as a response.
+    """
     return render_template('landingpage.html')
+
 @app.route('/home')
 def home():
+    """
+    Renders the homepage template.
+    """
     return render_template('homepage.html')
 
 @app.route('/login')
 def login():
+    """
+    Create the Spotify authorization URL with the necessary scopes and redirect to the login page.
+    """
     scope = 'user-read-private user-read-email playlist-read-private user-top-read playlist-modify-public playlist-modify-private'
     params = {
         'client_id': CLIENT_ID,
@@ -70,10 +115,16 @@ def login():
 
 @app.route('/signup')
 def signup():
+    """
+    Redirect the user to the Spotify signup page.
+    """
     return redirect(SIGNUP_URL)
 
 @app.route('/callback')
 def callback():
+    """
+    Handle the Spotify callback after user authorization.
+    """
     code = request.args.get('code')
     token_data = get_token(code)
     if token_data:
@@ -85,6 +136,9 @@ def callback():
         return 'Failed to get token', 400
 
 def get_token(code):
+    """
+    Get access and refresh tokens using the authorization code.
+    """
     auth_str = f"{CLIENT_ID}:{CLIENT_SECRET}"
     b64_auth_str = base64.urlsafe_b64encode(auth_str.encode()).decode()
     headers = {
@@ -104,6 +158,15 @@ def get_token(code):
     }
 
 def refresh_access_token(refresh_token):
+    """
+    Refresh the Spotify access token using the provided refresh token.
+
+    Args:
+    refresh_token (str): The refresh token used to obtain a new access token.
+
+    Returns:
+    str: A new access token if the refresh is successful, None otherwise.
+    """
     auth_str = f"{CLIENT_ID}:{CLIENT_SECRET}"
     b64_auth_str = base64.urlsafe_b64encode(auth_str.encode()).decode()
     headers = {
@@ -123,6 +186,9 @@ def refresh_access_token(refresh_token):
         return None
 
 def get_valid_token():
+    """
+    Retrieve a valid Spotify access token. If the current token is expired, refresh it.
+    """
     token = session.get('token')
     refresh_token = session.get('refresh_token')
     if token:
@@ -136,6 +202,9 @@ def get_valid_token():
 
 @app.route('/profile')
 def profile():
+    """
+    Retrieves user profile information from Spotify API and renders it on the 'profile.html' template.
+    """
     token = get_valid_token()
     if not token:
         return redirect(url_for('login'))
@@ -156,6 +225,9 @@ def profile():
 
 @app.route('/playlists')
 def get_playlists():
+    """
+    Retrieves playlists from Spotify API and renders them on the playlists.html template.
+    """
     token = get_valid_token()
     if not token:
         return redirect(url_for('login'))
@@ -174,6 +246,10 @@ def get_playlists():
 
 @app.route('/recommendations', methods=['GET'])
 def get_recommendations():
+    """
+    Retrieve recommendations for the user and store them in the session.
+
+    """
     token = get_valid_token()
     if not token:
         return redirect(url_for('login'))
@@ -203,6 +279,15 @@ def get_recommendations():
 
 @app.route('/tracks/<track_id>')
 def get_track(track_id):
+    """
+    Retrieve a track by its ID and render the track info in a template.
+    
+    Args:
+        track_id (str): The ID of the track to retrieve.
+    
+    Returns:
+        The rendered 'track.html' template with the track info.
+    """
     token = get_valid_token()
     if not token:
         return redirect(url_for('login'))
@@ -217,6 +302,10 @@ def get_track(track_id):
 
 @app.route('/artists/<artist_id>')
 def get_artist(artist_id):
+    """
+    Retrieves artist information by ID and renders it in 'artist.html'.
+    """
+    
     token = get_valid_token()
     if not token:
         return redirect(url_for('login'))
@@ -232,3 +321,4 @@ def get_artist(artist_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

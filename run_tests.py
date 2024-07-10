@@ -1,3 +1,8 @@
+"""Run all tests.
+
+This module runs all tests in the ``tests`` directory.
+"""
+
 import unittest
 import sys
 import os
